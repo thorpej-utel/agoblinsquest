@@ -38,11 +38,11 @@
   ],
   "objects": [
     {"type": "npc", "id": "chief", "x": 240, "y": 120},
-    {"type": "npc", "id": "marna", "x": 80, "y": 126},
+    {"type": "npc", "id": "marna", "x": 80, "y": 142},
     {"type": "npc", "id": "gorb", "x": 320, "y": 124},
     {"type": "npc", "id": "zog", "x": 160, "y": 118},
     {"type": "npc", "id": "grik", "x": 320, "y": 120},
-    {"type": "npc", "id": "pip", "x": 64, "y": 136},
+    {"type": "npc", "id": "pip", "x": 64, "y": 152},
     {"type": "item", "id": "honey_cake", "x": 48, "y": 144}
   ],
   "checkpoint": true

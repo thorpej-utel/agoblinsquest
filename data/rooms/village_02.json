@@ -37,7 +37,7 @@
     {"direction": "left", "target": "village_01"}
   ],
   "objects": [
-    {"type": "npc", "id": "moss", "x": 96, "y": 122},
+    {"type": "npc", "id": "moss", "x": 96, "y": 138},
     {"type": "item", "id": "magic_spoon", "x": 320, "y": 144}
   ],
   "checkpoint": false

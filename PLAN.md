@@ -396,6 +396,19 @@ Goal: Juice, audio, balancing, and bug fixing.
 
 ---
 
+## Known Issues
+
+| Issue | Impact | Notes |
+|---|---|---|
+| `NPC` data files (`data/npcs/*/data.json`) contain unused `x`/`y` fields | Low — positions from room JSON objects take precedence, so the stale fields are ignored at runtime. Clean them up or remove to avoid confusion. |
+| `move_and_collide()` in `src/systems/physics.py` returns unchanged `vx`/`vy` | Low — callers reset velocities each frame anyway, but the return values are misleading. |
+| `_resolve_x()` AABB collision can push player into adjacent tiles at corners | Low — works for simple rooms. May need sweep-based or iterative resolution for complex geometry. |
+| `src/rooms/manager.py` referenced in Architecture diagram but never created | Low — room loading is handled directly by the `Room` class. Update PLAN when convenient. |
+| Health/food restoration, death/respawn, and save/load not yet implemented | Phase 3 — tracked in TASKS.md. |
+| `assets/` and `saves/` directories don't exist | Expected — created at runtime. `saves/` is gitignored. |
+
+---
+
 ## Risks & Mitigations
 
 | Risk | Mitigation |

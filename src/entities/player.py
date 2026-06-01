@@ -1,5 +1,5 @@
 import pygame
-from settings import TILE_SIZE, PLAYER_SPEED, JUMP_VELOCITY, PLAYER_WIDTH, PLAYER_HEIGHT
+from settings import TILE_SIZE, PLAYER_SPEED, JUMP_VELOCITY, PLAYER_WIDTH, PLAYER_HEIGHT, GRAVITY
 from src.systems.physics import move_and_collide
 
 class Player:
@@ -18,8 +18,6 @@ class Player:
     def update(self, dt, input, room):
         if self.invincible_timer > 0:
             self.invincible_timer -= dt
-
-    def update(self, dt, input, room):
         self.vx = 0.0
         if input.is_key_down(pygame.K_LEFT) or input.is_key_down(pygame.K_a):
             self.vx = -PLAYER_SPEED
@@ -29,7 +27,7 @@ class Player:
             self.vy = JUMP_VELOCITY
             self.grounded = False
 
-        self.vy = min(self.vy + 800.0 * dt, 600.0)
+        self.vy = min(self.vy + GRAVITY * dt, 600.0)
         self.grounded = False
         self.vx, self.vy, self.grounded = move_and_collide(
             self.rect, self.vx, self.vy, dt, room.collision

@@ -203,6 +203,22 @@ item2_ids = [i.item_id for i in room2.items]
 check("magic_spoon in room2", "magic_spoon" in item2_ids)
 pygame.quit()
 
+print("\n=== Physics Collision ===")
+from src.systems.physics import move_and_collide
+from settings import ROOM_ROWS, ROOM_COLS, TILE_SIZE
+
+collision_map = [[0] * ROOM_COLS for _ in range(ROOM_ROWS)]
+for col in range(ROOM_COLS):
+    collision_map[ROOM_ROWS - 1][col] = 1
+
+player_rect = pygame.Rect(100, (ROOM_ROWS - 1) * TILE_SIZE - 10 - 20, 20, 20)
+velocity_x = 0.0
+velocity_y = 200.0
+velocity_x, velocity_y, grounded = move_and_collide(player_rect, velocity_x, velocity_y, 0.1, collision_map)
+check("player lands on ground after falling", grounded)
+check("vertical velocity is zero after landing", velocity_y == 0.0)
+check("player bottom sits on ground tile", player_rect.bottom == (ROOM_ROWS - 1) * TILE_SIZE)
+
 print("\n=== Engine Initialization ===")
 pygame.init()
 from src.engine import Engine
