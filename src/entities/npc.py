@@ -1,6 +1,8 @@
 import json
 import os
 import pygame
+from src.utils.animation import SpriteSheet, Animation
+
 
 class NpcManager:
     def __init__(self):
@@ -36,8 +38,34 @@ class Npc:
         self.interact_range = data.get("interact_range", 24)
         self.rect = pygame.Rect(x, y, self.size[0], self.size[1])
         self.dialogue_id = None
+        self._sprite = None
+        self._anim = None
+        self._offset_x = 0
+        self._offset_y = 0
+        sprite_path = data.get("sprite")
+        if sprite_path and os.path.exists(sprite_path):
+            fw = data.get("sprite_frame_w", 48)
+            fh = data.get("sprite_frame_h", 64)
+            n_idle = data.get("idle_frames", 2)
+            sheet = SpriteSheet(sprite_path, fw, fh)
+            frames = [sheet.get_frame(i) for i in range(n_idle)]
+            self._anim = Animation(frames, fps=4, loop=True)
+            self._offset_x = data.get("sprite_offset_x", (fw - self.size[0]) // 2)
+            self._offset_y = data.get("sprite_offset_y", fh - self.size[1])
+            self._sprite = True
+
+    def update(self, dt):
+        if self._anim:
+            self._anim.update(dt)
 
     def render(self, surface, camera):
+        if self._sprite and self._anim:
+            frame = self._anim.current_frame()
+            if not self.face_right:
+                frame = pygame.transform.flip(frame, True, False)
+            rect = camera.apply(self.rect)
+            surface.blit(frame, (rect.x - self._offset_x, rect.y - self._offset_y))
+            return
         rect = camera.apply(self.rect)
         pygame.draw.rect(surface, self.color, rect)
         darker = tuple(max(0, c - 40) for c in self.color)

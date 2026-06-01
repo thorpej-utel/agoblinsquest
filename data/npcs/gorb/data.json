@@ -4,9 +4,14 @@
   "room": "village_01",
   "x": 320,
   "y": 128,
-  "size": [26, 36],
+  "size": [28, 40],
   "color": [200, 160, 60],
-  "sprite": null,
+  "sprite": "assets/sprites/gorb.png",
+  "sprite_frame_w": 48,
+  "sprite_frame_h": 64,
+  "sprite_offset_x": 10,
+  "sprite_offset_y": 24,
+  "idle_frames": 2,
   "interact_range": 26,
   "face_right": false
 }

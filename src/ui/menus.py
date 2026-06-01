@@ -1,5 +1,6 @@
 import pygame
 from settings import INTERNAL_WIDTH, INTERNAL_HEIGHT
+from src.ui.item_renderer import ItemSpriteRenderer
 
 class InventoryScreen:
     def __init__(self):
@@ -40,9 +41,13 @@ class InventoryScreen:
             if i < len(inventory.items):
                 item_id = inventory.items[i]
                 item_def = items_def.get(item_id, {})
-                color = tuple(item_def.get("color", [180, 120, 200]))
-                inner = rect.inflate(-8, -8)
-                pygame.draw.rect(surface, color, inner)
+                sprite_index = item_def.get("sprite_index")
+                if sprite_index is not None:
+                    ItemSpriteRenderer.render(surface, sprite_index, rect.x + 4, rect.y + 4, 32)
+                else:
+                    color = tuple(item_def.get("color", [180, 120, 200]))
+                    inner = rect.inflate(-8, -8)
+                    pygame.draw.rect(surface, color, inner)
                 name = item_def.get("name", item_id)
                 name_surf = self.font.render(name, True, (220, 215, 200))
                 surface.blit(name_surf, (rect.x + 4, rect.y + rect.h + 2))

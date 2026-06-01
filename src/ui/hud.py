@@ -1,5 +1,6 @@
 import pygame
 from settings import INTERNAL_WIDTH, TILE_SIZE
+from src.ui.item_renderer import ItemSpriteRenderer
 
 class HUD:
     def __init__(self):
@@ -7,12 +8,16 @@ class HUD:
         self.heart_full = "\u2665"
         self.heart_empty = "\u2661"
 
-    def render(self, surface, player, inventory, items_def):
+    def render(self, surface, player, inventory, items_def, room_name=""):
         hearts_text = ""
         for i in range(4):
             hearts_text += self.heart_full if i < player.hearts else self.heart_empty
         heart_surf = self.font.render(hearts_text, True, (220, 40, 40))
         surface.blit(heart_surf, (4, 4))
+
+        room_surf = self.font.render(room_name, True, (160, 155, 130))
+        rx = INTERNAL_WIDTH // 2 - room_surf.get_width() // 2
+        surface.blit(room_surf, (rx, 4))
 
         gold_def = items_def.get("gold_tooth")
         if gold_def:
@@ -36,6 +41,10 @@ class HUD:
             if i < len(inventory.items):
                 item_id = inventory.items[i]
                 item_def = items_def.get(item_id, {})
-                color = tuple(item_def.get("color", [180, 120, 200]))
-                inner = rect.inflate(-4, -4)
-                pygame.draw.rect(surface, color, inner)
+                sprite_index = item_def.get("sprite_index")
+                if sprite_index is not None:
+                    ItemSpriteRenderer.render(surface, sprite_index, sx + 2, sy + 2, 10)
+                else:
+                    color = tuple(item_def.get("color", [180, 120, 200]))
+                    inner = rect.inflate(-4, -4)
+                    pygame.draw.rect(surface, color, inner)

@@ -163,6 +163,7 @@ class Engine:
 
     def _update_playing(self, dt):
         self.player.update(dt, self.input, self.current_room)
+        self.current_room.update(dt)
         exit_data = self.player.check_exit(self.current_room)
         if exit_data:
             self._start_transition(exit_data)
@@ -214,7 +215,7 @@ class Engine:
         if self.state in (GameState.PLAYING, GameState.TRANSITIONING, GameState.PAUSED, GameState.DIALOGUE):
             self.current_room.render(self.internal, self.camera)
             self.player.render(self.internal, self.camera)
-            self.hud.render(self.internal, self.player, self.inventory, self.item_defs)
+            self.hud.render(self.internal, self.player, self.inventory, self.item_defs, self.current_room.name)
             if self.state == GameState.DIALOGUE:
                 node = self.dialogue._current_node()
                 if node:

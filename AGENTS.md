@@ -2,8 +2,13 @@
 
 ## Project state
 
-Fresh project — **no code written yet**. All existing files are planning/docs:
-`PLAN.md`, `TASKS.md`, `PRD.md`, `README.md`, `requirements.txt`, `LICENSE`.
+Phases 1 and 2 complete, Phase 3 in progress. P6.1 (player sprite) also done.
+Core systems implemented: game loop, state machine, input, camera, tilemap rendering,
+player movement/physics, room transitions, inventory, NPCs, dialogue, HUD, items.
+Next up: puzzles, enemies, health, save system (Phase 3).
+
+**IMPORTANT**: `PLAN.md` and `TASKS.md` are the most important planning docs. Keep them
+updated before exiting — mark tasks done, add new tasks, update status.
 
 ## Quickstart
 

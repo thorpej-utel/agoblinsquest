@@ -46,6 +46,10 @@ class Room:
                 return e
         return None
 
+    def update(self, dt):
+        for npc in self.npcs:
+            npc.update(dt)
+
     def render(self, surface, camera):
         self.tilemap.render(surface, camera)
         for item in self.items:

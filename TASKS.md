@@ -90,8 +90,10 @@
 
 ## Phase 6 — Polish
 
-- [ ] P6.1 Create proper player sprite (48x64 or 64x64 with all animations)
-- [ ] P6.2 Create NPC sprites (Goblin Chief, Merchant Gorb, Professor Squig, Bog Witch, Lost King)
+- [x] P6.1 Create proper player sprite (48x64 or 64x64 with all animations)
+- [x] P6.2a Create Chief Bork sprite (done previously)
+- [x] P6.2b Create Merchant Gorb sprite
+- [ ] P6.2c Create remaining NPC sprites (Professor Squig, Bog Witch, Lost King, etc.)
 - [ ] P6.3 Create enemy sprites (bat, spider, troll, haunted armour, fire beetle)
 - [ ] P6.4 Add region background art
 - [ ] P6.5 Add region music themes (chiptune)
@@ -101,4 +103,5 @@
 - [ ] P6.9 Add smooth room transitions (slide/fade)
 - [ ] P6.10 Balance heart placement, enemy speed, puzzle difficulty
 - [ ] P6.11 Complete save/load from title screen
-- [ ] P6.12 Final bug-fixing pass
+- [x] P6.12 Create item sprite icons (16 items, spritesheet + renderer)
+- [ ] P6.13 Final bug-fixing pass

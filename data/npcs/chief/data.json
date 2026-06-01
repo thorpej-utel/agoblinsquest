@@ -6,7 +6,12 @@
   "y": 96,
   "size": [28, 40],
   "color": [160, 90, 50],
-  "sprite": null,
+  "sprite": "assets/sprites/chief.png",
+  "sprite_frame_w": 48,
+  "sprite_frame_h": 64,
+  "sprite_offset_x": 10,
+  "sprite_offset_y": 24,
+  "idle_frames": 2,
   "interact_range": 28,
   "face_right": false
 }

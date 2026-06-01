@@ -24,7 +24,8 @@ def _resolve_x(rect, vx, collision_map):
 
     for row in range(max(0, top), min(ROOM_ROWS, bottom + 1)):
         for col in range(max(0, left), min(ROOM_COLS, right + 1)):
-            if not _is_solid(collision_map, row, col):
+            val = collision_map[row][col] if 0 <= row < ROOM_ROWS and 0 <= col < ROOM_COLS else 0
+            if val != 1:
                 continue
             tile_left = col * TILE_SIZE
             tile_right = tile_left + TILE_SIZE
@@ -52,17 +53,25 @@ def _resolve_y(rect, vy, collision_map):
 
     for row in range(max(0, top), min(ROOM_ROWS, bottom + 1)):
         for col in range(max(0, left), min(ROOM_COLS, right + 1)):
-            if not _is_solid(collision_map, row, col):
+            val = collision_map[row][col] if 0 <= row < ROOM_ROWS and 0 <= col < ROOM_COLS else 0
+            if val == 0:
                 continue
             tile_top = row * TILE_SIZE
             tile_bottom = tile_top + TILE_SIZE
-            if rect.bottom > tile_top and rect.top < tile_bottom:
-                collided = True
-                if vy >= 0:
+            if not (rect.bottom > tile_top and rect.top < tile_bottom):
+                continue
+            if val == 2:
+                if vy >= 0 and row >= bottom:
                     rect.bottom = tile_top
                     grounded = True
-                else:
-                    rect.top = tile_bottom
+                    collided = True
+                continue
+            collided = True
+            if vy >= 0:
+                rect.bottom = tile_top
+                grounded = True
+            else:
+                rect.top = tile_bottom
     return grounded, collided
 
 
@@ -79,5 +88,16 @@ def is_on_ground(rect, collision_map):
         if bottom_tile < ROOM_ROWS:
             for col in range(max(0, left), min(ROOM_COLS, right + 1)):
                 if collision_map[bottom_tile][col] > 0:
+                    return True
+    return False
+
+def is_on_oneway(rect, collision_map):
+    left = rect.left // TILE_SIZE
+    right = (rect.right - 1) // TILE_SIZE
+    if rect.bottom % TILE_SIZE == 0:
+        bottom_tile = rect.bottom // TILE_SIZE
+        if bottom_tile < ROOM_ROWS:
+            for col in range(max(0, left), min(ROOM_COLS, right + 1)):
+                if collision_map[bottom_tile][col] == 2:
                     return True
     return False
