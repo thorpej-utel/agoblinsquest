@@ -65,6 +65,7 @@ class Engine:
             elif self.state in (GameState.PAUSED, GameState.INVENTORY):
                 pass
             self._render()
+            self._end_frame()
         pygame.quit()
         sys.exit()
 
@@ -92,6 +93,8 @@ class Engine:
                     elif self.state == GameState.INVENTORY:
                         self.state = GameState.PLAYING
             self.input.handle_event(event)
+
+    def _end_frame(self):
         self.input.update()
 
         if self.state == GameState.DIALOGUE:

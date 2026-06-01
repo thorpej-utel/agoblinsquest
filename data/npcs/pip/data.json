@@ -1,7 +1,7 @@
 {
   "id": "pip",
   "name": "Pip",
-  "room": "village_01",
+  "room": "village_training_ground",
   "x": 352,
   "y": 128,
   "size": [16, 24],

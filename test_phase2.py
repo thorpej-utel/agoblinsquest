@@ -178,12 +178,12 @@ check("room has items", len(room.items) > 0)
 check("room has exits", len(room.exits) > 0)
 
 npc_ids = [n.id for n in room.npcs]
-check("chief in room", "chief" in npc_ids)
 check("marna in room", "marna" in npc_ids)
 check("gorb in room", "gorb" in npc_ids)
-check("zog in room", "zog" in npc_ids)
-check("grik in room", "grik" in npc_ids)
-check("pip in room", "pip" in npc_ids)
+check("chief NOT in village_01", "chief" not in npc_ids)
+check("zog NOT in village_01", "zog" not in npc_ids)
+check("grik NOT in village_01", "grik" not in npc_ids)
+check("pip NOT in village_01", "pip" not in npc_ids)
 
 item_ids = [i.item_id for i in room.items]
 check("honey_cake in room", "honey_cake" in item_ids)
@@ -201,6 +201,13 @@ npc2_ids = [n.id for n in room2.npcs]
 check("moss in room2", "moss" in npc2_ids)
 item2_ids = [i.item_id for i in room2.items]
 check("magic_spoon in room2", "magic_spoon" in item2_ids)
+
+# Check new Phase 4 rooms
+for rid, rname in [("village_chief_hut", "chief"), ("village_shaman_hut", "zog"), ("village_training_ground", "grik")]:
+    r = Room(rid, nm, item_defs)
+    check(f"{rid} loads", r is not None)
+    r_npc_ids = [n.id for n in r.npcs]
+    check(f"{rname} in {rid}", rname in r_npc_ids)
 pygame.quit()
 
 print("\n=== Physics Collision ===")

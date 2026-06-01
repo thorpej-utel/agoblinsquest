@@ -70,3 +70,14 @@ def _is_solid(collision_map, row, col):
     if row < 0 or row >= ROOM_ROWS or col < 0 or col >= ROOM_COLS:
         return False
     return collision_map[row][col] > 0
+
+def is_on_ground(rect, collision_map):
+    left = rect.left // TILE_SIZE
+    right = (rect.right - 1) // TILE_SIZE
+    if rect.bottom % TILE_SIZE == 0:
+        bottom_tile = rect.bottom // TILE_SIZE
+        if bottom_tile < ROOM_ROWS:
+            for col in range(max(0, left), min(ROOM_COLS, right + 1)):
+                if collision_map[bottom_tile][col] > 0:
+                    return True
+    return False

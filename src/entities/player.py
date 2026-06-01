@@ -1,6 +1,6 @@
 import pygame
 from settings import TILE_SIZE, PLAYER_SPEED, JUMP_VELOCITY, PLAYER_WIDTH, PLAYER_HEIGHT, GRAVITY
-from src.systems.physics import move_and_collide
+from src.systems.physics import move_and_collide, is_on_ground
 
 class Player:
     def __init__(self, x, y):
@@ -32,6 +32,9 @@ class Player:
         self.vx, self.vy, self.grounded = move_and_collide(
             self.rect, self.vx, self.vy, dt, room.collision
         )
+        if not self.grounded and self.vy >= 0 and is_on_ground(self.rect, room.collision):
+            self.grounded = True
+            self.vy = 0.0
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
 

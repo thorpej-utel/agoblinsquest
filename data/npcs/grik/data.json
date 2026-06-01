@@ -1,7 +1,7 @@
 {
   "id": "grik",
   "name": "Guard Captain Grik",
-  "room": "village_01",
+  "room": "village_training_ground",
   "x": 256,
   "y": 96,
   "size": [28, 40],

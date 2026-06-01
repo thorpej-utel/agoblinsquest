@@ -1,7 +1,7 @@
 {
   "id": "chief",
   "name": "Chief Bork",
-  "room": "village_01",
+  "room": "village_chief_hut",
   "x": 288,
   "y": 96,
   "size": [28, 40],

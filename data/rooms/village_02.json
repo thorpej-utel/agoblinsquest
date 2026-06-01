@@ -34,7 +34,8 @@
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
   ],
   "exits": [
-    {"direction": "left", "target": "village_01"}
+    {"direction": "left", "target": "village_01"},
+    {"direction": "up", "target": "village_shaman_hut"}
   ],
   "objects": [
     {"type": "npc", "id": "moss", "x": 96, "y": 138},

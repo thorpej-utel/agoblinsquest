@@ -1,7 +1,7 @@
 {
   "id": "zog",
   "name": "Shaman Zog",
-  "room": "village_01",
+  "room": "village_shaman_hut",
   "x": 144,
   "y": 96,
   "size": [22, 42],
