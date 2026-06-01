@@ -1,0 +1,12 @@
+{
+  "id": "chief",
+  "name": "Chief Bork",
+  "room": "village_01",
+  "x": 288,
+  "y": 96,
+  "size": [28, 40],
+  "color": [160, 90, 50],
+  "sprite": null,
+  "interact_range": 28,
+  "face_right": false
+}

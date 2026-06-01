@@ -1,0 +1,25 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "Go back, kid. Mountain's cursed. Or haunted. Haven't decided which.", "next": 1},
+      {"text": "Been mining here forty years. Seen things. The old ruins below the mountain weren't built by goblins.", "next": 2},
+      {"text": "The King went through the eastern passage. Past the haunted armour. If you're set on this fool's errand, start there.", "next": null}
+    ]
+  },
+  "after_intro": {
+    "conditions": {"has_met": "moss", "puzzle_done": "locked_shrine"},
+    "priority": 1,
+    "nodes": [
+      {"text": "You opened the shrine? Then the Depths are waiting. I don't envy you, kid. But I'm rooting for you.", "next": null}
+    ]
+  },
+  "returned": {
+    "conditions": {"puzzle_done": "final_boss"},
+    "priority": 10,
+    "nodes": [
+      {"text": "You came back from the Depths. I've seen a lot in forty years, but never that. You've got real grit, Grub.", "next": null}
+    ]
+  }
+}

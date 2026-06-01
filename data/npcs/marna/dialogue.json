@@ -1,0 +1,33 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "Oh, Grub. Look at you. My little goblin, off to save the world.", "next": 1},
+      {"text": "Here, take this honey cake. Your grandmother's recipe. It'll keep your spirits up.", "next": null, "give_item": "honey_cake"}
+    ]
+  },
+  "after_start": {
+    "conditions": {"has_item": "honey_cake", "has_met": "zog"},
+    "priority": 1,
+    "nodes": [
+      {"text": "You've seen Zog? Then it's really happening, isn't it?", "next": 1},
+      {"text": "Be careful out there, my brave boy. And write if you find a quill.", "next": null}
+    ]
+  },
+  "has_rope": {
+    "conditions": {"has_item": "rope"},
+    "priority": 2,
+    "nodes": [
+      {"text": "Oh, you found the old rope! Pip's always playing behind the blacksmith's. That child sees everything.", "next": null}
+    ]
+  },
+  "returned": {
+    "conditions": {"puzzle_done": "final_boss"},
+    "priority": 10,
+    "nodes": [
+      {"text": "You're home. You're really home.", "next": 1},
+      {"text": "I knew you could do it, Grub. I always knew.", "next": null}
+    ]
+  }
+}

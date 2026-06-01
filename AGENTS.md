@@ -48,6 +48,7 @@ saves/             # runtime save files (gitignored)
 - **Phase 1 first**: game loop, state machine, input, camera, tilemap rendering, player movement, physics, room transitions.
 - **Placeholders until Phase 6**: use colored rectangles/shapes for player, NPCs, enemies.
 - **All content in JSON**: never hardcode room layouts, item definitions, NPC positions, dialogue, or puzzle logic in Python files.
+- **Story & NPC content**: designed in `data/story_and_npcs.md`, data files (dialogues.json, npcs.json) generated from it.
 
 ## Key conventions
 

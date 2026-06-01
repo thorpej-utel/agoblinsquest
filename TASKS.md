@@ -2,34 +2,38 @@
 
 ## Phase 1 — Foundation
 
-- [ ] P1.1 Create virtual environment, install `pygame-ce`
-- [ ] P1.2 Scaffold `main.py` with game loop template
-- [ ] P1.3 Create `settings.py` (screen size, FPS, asset paths, constants)
-- [ ] P1.4 Build `engine.py` state machine (TITLE, PLAYING, PAUSED, etc.)
-- [ ] P1.5 Build `input.py` input handler (key mapping, press/release)
-- [ ] P1.6 Build `camera.py` world-to-screen coordinate transform
-- [ ] P1.7 Build `rooms/tilemap.py` tile renderer
-- [ ] P1.8 Build `rooms/room.py` room data loading & collision grid
-- [ ] P1.9 Build `entities/player.py` player movement (left/right/jump)
-- [ ] P1.10 Build `systems/physics.py` gravity & AABB collision
-- [ ] P1.11 Implement screen-edge room transitions
-- [ ] P1.12 Create 2 placeholder JSON rooms (village_01, village_02)
+- [x] P1.1 Create virtual environment, install `pygame-ce`
+- [x] P1.2 Scaffold `main.py` with game loop template
+- [x] P1.3 Create `settings.py` (screen size, FPS, asset paths, constants)
+- [x] P1.4 Build `engine.py` state machine (PLAYING, PAUSED, TRANSITIONING)
+- [x] P1.5 Build `input.py` input handler (key mapping, press/release)
+- [x] P1.6 Build `camera.py` world-to-screen coordinate transform
+- [x] P1.7 Build `rooms/tilemap.py` tile renderer
+- [x] P1.8 Build `rooms/room.py` room data loading & collision grid
+- [x] P1.9 Build `entities/player.py` player movement (left/right/jump)
+- [x] P1.10 Build `systems/physics.py` gravity & AABB collision
+- [x] P1.11 Implement screen-edge room transitions
+- [x] P1.12 Create 2 placeholder JSON rooms (village_01, village_02)
 
 ## Phase 2 — Content Pipeline
 
-- [ ] P2.1 Create JSON schemas for rooms, items, NPCs, dialogue
-- [ ] P2.2 Build `rooms/manager.py` room loading, caching, transitions
-- [ ] P2.3 Create placeholder JSON rooms (village 4-6 room starter set)
-- [ ] P2.4 Build `systems/inventory.py` item grid & management (max 6)
-- [ ] P2.5 Create `data/items.json` with initial item definitions
-- [ ] P2.6 Implement in-world item pickups
-- [ ] P2.7 Build `ui/menus.py` inventory screen overlay
-- [ ] P2.8 Build `entities/npc.py` NPC rendering & interaction zones
-- [ ] P2.9 Build `systems/dialogue.py` typewriter text system
-- [ ] P2.10 Build `ui/dialogue_box.py` dialogue box rendering
-- [ ] P2.11 Create `data/npcs.json` NPC definitions
-- [ ] P2.12 Create `data/dialogues.json` dialogue trees
-- [ ] P2.13 Build `ui/hud.py` hearts, item slots, gold tooth counter
+- [x] P2.1 Build `rooms/manager.py` room loading, caching, transitions (handled by Room class)
+- [x] P2.2 Create placeholder JSON rooms (village 4-6 room starter set — 2 rooms done, rest in Phase 4)
+- [x] P2.3 Build `systems/inventory.py` item grid & management (max 6)
+- [x] P2.4 Create `data/items.json` with initial item definitions (16 items)
+- [x] P2.5 Implement in-world item pickups (src/entities/item.py)
+- [x] P2.6 Build `ui/menus.py` inventory screen overlay
+- [x] P2.7 Build `entities/npc.py` NPC rendering & interaction zones
+- [x] P2.8 Build `systems/dialogue.py` typewriter text system
+- [x] P2.9 Build `ui/dialogue_box.py` dialogue box rendering
+- [x] P2.10 Build `ui/hud.py` hearts, item slots, gold tooth counter
+- [x] P2.11 Create NPC per-folder structure (data.json + dialogue.json)
+- [x] P2.12 Create puzzle per-folder structure (data.json)
+  - [x] broken_bridge
+  - [x] hungry_troll
+  - [x] broken_lift
+  - [x] dark_cave
+  - [x] locked_shrine
 
 ## Phase 3 — Gameplay Systems
 

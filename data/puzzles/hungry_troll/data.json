@@ -1,0 +1,16 @@
+{
+  "id": "hungry_troll",
+  "name": "Hungry Troll",
+  "room": "village_01",
+  "description": "Troll Grum blocks the bridge. He's hungry for mushrooms.",
+  "type": "item_trade",
+  "npc_id": "grum",
+  "conditions": {
+    "require_items": ["giant_mushroom"]
+  },
+  "on_complete": {
+    "message": "Grum happily munches the mushroom and steps aside.",
+    "consume_items": ["giant_mushroom"],
+    "give_item": "ancient_key"
+  }
+}

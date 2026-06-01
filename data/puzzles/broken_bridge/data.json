@@ -1,0 +1,15 @@
+{
+  "id": "broken_bridge",
+  "name": "Broken Bridge",
+  "room": "village_01",
+  "description": "A broken bridge blocks the path to the Watchtower. It needs rope and a wooden plank.",
+  "type": "item_check",
+  "conditions": {
+    "require_items": ["rope", "wooden_plank"]
+  },
+  "on_complete": {
+    "message": "You tie the plank firmly with the rope. The bridge is safe to cross!",
+    "consume_items": ["rope", "wooden_plank"],
+    "unlock_exit": "woods_watchtower_base"
+  }
+}

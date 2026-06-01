@@ -1,0 +1,25 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "No cross bridge. Grum guard bridge. Grum hungry. Grum sad.", "next": 1},
+      {"text": "Grum like mushrooms. Big juicy mushrooms. You have mushroom?", "next": null}
+    ]
+  },
+  "has_mushroom": {
+    "conditions": {"has_item": "giant_mushroom"},
+    "priority": 1,
+    "nodes": [
+      {"text": "Ooooh! Big mushroom! Grum happy now!", "next": 1},
+      {"text": "Grum move. You cross bridge. Here, take this key. Grum found it. Grum no need key.", "next": null, "remove_item": "giant_mushroom", "give_item": "ancient_key"}
+    ]
+  },
+  "after_trade": {
+    "conditions": {"puzzle_done": "hungry_troll"},
+    "priority": 2,
+    "nodes": [
+      {"text": "Grum full. Grum happy. Bridge is yours.", "next": null}
+    ]
+  }
+}

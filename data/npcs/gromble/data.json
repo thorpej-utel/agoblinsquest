@@ -1,0 +1,12 @@
+{
+  "id": "gromble",
+  "name": "Gromble",
+  "room": "village_01",
+  "x": 64,
+  "y": 64,
+  "size": [22, 36],
+  "color": [180, 140, 80],
+  "sprite": null,
+  "interact_range": 24,
+  "face_right": false
+}

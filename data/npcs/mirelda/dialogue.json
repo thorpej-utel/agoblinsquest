@@ -1,0 +1,26 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "Another adventurer. Let me guess — you need something.", "next": 1},
+      {"text": "I brew potions. Powerful ones. But I need ingredients.", "next": 2},
+      {"text": "Bring me a Giant Mushroom from the woods. I've been craving mushroom stew for weeks.", "next": null}
+    ]
+  },
+  "has_mushroom": {
+    "conditions": {"has_item": "giant_mushroom"},
+    "priority": 1,
+    "nodes": [
+      {"text": "A Giant Mushroom! Perfect. The stew will be magnificent.", "next": 1},
+      {"text": "Here, take this Torch. The dark caves north of here are impossible to navigate without light. Don't ask how I know.", "next": null, "remove_item": "giant_mushroom", "give_item": "torch"}
+    ]
+  },
+  "after_trade": {
+    "conditions": {"has_item": "torch"},
+    "priority": 2,
+    "nodes": [
+      {"text": "Enjoy the torch. Mind the spiders in the caves. They don't like light. Or goblins. Or anything really.", "next": null}
+    ]
+  }
+}

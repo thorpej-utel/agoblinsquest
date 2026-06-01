@@ -1,0 +1,12 @@
+{
+  "id": "grum",
+  "name": "Troll Grum",
+  "room": "village_01",
+  "x": 144,
+  "y": 96,
+  "size": [40, 48],
+  "color": [100, 140, 100],
+  "sprite": null,
+  "interact_range": 34,
+  "face_right": false
+}

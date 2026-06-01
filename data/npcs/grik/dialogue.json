@@ -1,0 +1,25 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "Out of my way, kid. Warriors are talking.", "next": 1},
+      {"text": "Wait... the Chief actually sent YOU? A maintenance goblin?", "next": 2},
+      {"text": "Hah! This should be entertaining. Try not to die before you leave the village.", "next": null}
+    ]
+  },
+  "after_woods": {
+    "conditions": {"puzzle_done": "broken_bridge"},
+    "priority": 5,
+    "nodes": [
+      {"text": "You crossed the bridge? Maybe I misjudged you. Slightly.", "next": null}
+    ]
+  },
+  "returned": {
+    "conditions": {"puzzle_done": "final_boss"},
+    "priority": 10,
+    "nodes": [
+      {"text": "I was wrong about you, Grub. You're the real warrior. I'm just the one who polishes armour and talks big.", "next": null}
+    ]
+  }
+}

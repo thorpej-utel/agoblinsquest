@@ -1,0 +1,26 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "SHH! Did you hear that? The walls are whispering again.", "next": 1},
+      {"text": "Oh. You're not a wall-person. You're just a small goblin.", "next": 2},
+      {"text": "Never mind the walls. They only whisper to me anyway.", "next": 3},
+      {"text": "Here. Take this spoon. It's magic. Probably. I found it in a tree.", "next": null, "give_item": "magic_spoon"}
+    ]
+  },
+  "after_spoon": {
+    "conditions": {"has_item": "magic_spoon"},
+    "priority": 1,
+    "nodes": [
+      {"text": "You still have the spoon! Have you tried eating soup with it? Soup tastes better when it's magical.", "next": null}
+    ]
+  },
+  "spoon_used": {
+    "conditions": {"not_has_item": "magic_spoon"},
+    "priority": 2,
+    "nodes": [
+      {"text": "You lost the spoon! That's okay. The spoon was always more of a... concept.", "next": null}
+    ]
+  }
+}

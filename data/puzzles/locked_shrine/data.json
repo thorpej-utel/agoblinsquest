@@ -1,0 +1,15 @@
+{
+  "id": "locked_shrine",
+  "name": "Locked Shrine",
+  "room": "village_01",
+  "description": "An ancient shrine requires three relics: a Gemstone, a Golden Acorn, and an Ancient Coin.",
+  "type": "item_check",
+  "conditions": {
+    "require_items": ["gemstone", "golden_acorn", "ancient_coin"]
+  },
+  "on_complete": {
+    "message": "You place the three relics into the shrine alcoves. The ground rumbles as a hidden passage opens!",
+    "consume_items": ["gemstone", "golden_acorn", "ancient_coin"],
+    "unlock_exit": "depths_entrance"
+  }
+}

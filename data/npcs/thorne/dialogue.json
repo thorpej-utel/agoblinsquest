@@ -1,0 +1,29 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "Another one? Tell my tribe I'm sorry. I failed them.", "next": 1},
+      {"text": "I came looking for the Crown of Endless Riches. A fool's dream.", "next": 2},
+      {"text": "It's real, you know. The Crown. I saw it. But the Guardian blocks the way.", "next": 3},
+      {"text": "I've been trapped here since the cave-in. The passage behind me leads to the Crown Chamber, but the Guardian won't let me pass.", "next": 4},
+      {"text": "The Crystal Lens... you have it? Zog's old trinket. Point it at the shrine symbols in the chamber. It reveals the Guardian's weakness.", "next": null}
+    ]
+  },
+  "after_intro": {
+    "conditions": {"has_item": "crystal_lens"},
+    "priority": 1,
+    "nodes": [
+      {"text": "Take the Crystal Lens to the Crown Chamber. Read the symbols on the wall. The Guardian fears the light.", "next": null}
+    ]
+  },
+  "guardian_defeated": {
+    "conditions": {"puzzle_done": "final_boss"},
+    "priority": 10,
+    "nodes": [
+      {"text": "You did it. You defeated the Guardian.", "next": 1},
+      {"text": "The Crown... it's beautiful. But it's not about gold, is it? It's about what we're willing to do for each other.", "next": 2},
+      {"text": "Take me home, Grub. It's time I saw my people again.", "next": null}
+    ]
+  }
+}

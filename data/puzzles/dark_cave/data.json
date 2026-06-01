@@ -1,0 +1,14 @@
+{
+  "id": "dark_cave",
+  "name": "Dark Cave",
+  "room": "village_01",
+  "description": "A pitch-black cave blocks the path. Only a torch can light the way.",
+  "type": "item_check",
+  "conditions": {
+    "require_items": ["torch"]
+  },
+  "on_complete": {
+    "message": "You light the torch. The cave reveals hidden paths and ancient markings!",
+    "unlock_exit": "mountain_mine_entrance"
+  }
+}

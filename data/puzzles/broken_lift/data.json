@@ -1,0 +1,15 @@
+{
+  "id": "broken_lift",
+  "name": "Broken Lift",
+  "room": "village_01",
+  "description": "Professor Squig's lift machine has a cracked gear. It needs a new gear and a hammer to fit it.",
+  "type": "item_check",
+  "conditions": {
+    "require_items": ["broken_gear", "hammer"]
+  },
+  "on_complete": {
+    "message": "You fit the gear into place and hammer it tight. The lift shudders to life!",
+    "consume_items": ["broken_gear", "hammer"],
+    "unlock_exit": "marsh_witch_hut"
+  }
+}

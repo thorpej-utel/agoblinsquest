@@ -1,0 +1,12 @@
+{
+  "id": "thorne",
+  "name": "King Thorne",
+  "room": "village_01",
+  "x": 48,
+  "y": 128,
+  "size": [26, 40],
+  "color": [180, 160, 100],
+  "sprite": null,
+  "interact_range": 28,
+  "face_right": false
+}

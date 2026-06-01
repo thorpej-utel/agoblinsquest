@@ -1,0 +1,12 @@
+{
+  "id": "mirelda",
+  "name": "Bog Witch Mirelda",
+  "room": "village_01",
+  "x": 192,
+  "y": 96,
+  "size": [24, 40],
+  "color": [80, 60, 100],
+  "sprite": null,
+  "interact_range": 28,
+  "face_right": true
+}

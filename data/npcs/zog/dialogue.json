@@ -1,0 +1,32 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "The Chief sent you? Hah! He's more desperate than I thought.", "next": 1},
+      {"text": "But the spirits don't laugh. They showed me someone small would make the journey.", "next": 2},
+      {"text": "Take this Crystal Lens. It reveals truth hidden in stone. You'll need it in the mountain ruins.", "next": null, "give_item": "crystal_lens"}
+    ]
+  },
+  "after_intro": {
+    "conditions": {"has_item": "crystal_lens"},
+    "priority": 1,
+    "nodes": [
+      {"text": "The Crystal Lens shows what's hidden. The mountain holds many secrets.", "next": null}
+    ]
+  },
+  "has_relic": {
+    "conditions": {"has_item": "gemstone"},
+    "priority": 2,
+    "nodes": [
+      {"text": "A gemstone from the mountain... That's one of the three relics. The shrine awaits.", "next": null}
+    ]
+  },
+  "returned": {
+    "conditions": {"puzzle_done": "final_boss"},
+    "priority": 10,
+    "nodes": [
+      {"text": "I saw this in the flames, Grub. You were always meant to be the one.", "next": null}
+    ]
+  }
+}

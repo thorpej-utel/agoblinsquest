@@ -1,0 +1,12 @@
+{
+  "id": "grik",
+  "name": "Guard Captain Grik",
+  "room": "village_01",
+  "x": 256,
+  "y": 96,
+  "size": [28, 40],
+  "color": [120, 120, 140],
+  "sprite": null,
+  "interact_range": 28,
+  "face_right": false
+}

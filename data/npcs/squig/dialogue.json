@@ -1,0 +1,27 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "WHAT? Oh! A visitor! Don't touch anything! Especially the big lever!", "next": 1},
+      {"text": "My lift is broken. The main gear cracked. I need a new one and a hammer to fit it.", "next": 2},
+      {"text": "If you find those, I can fix the lift. It goes down to the marsh. Probably. Might go up. Hard to remember.", "next": null}
+    ]
+  },
+  "has_gear_hammer": {
+    "conditions": {"has_item": "broken_gear", "has_item": "hammer"},
+    "priority": 1,
+    "nodes": [
+      {"text": "You found a gear! And a hammer! Let me just... fit it in... there...", "next": 1},
+      {"text": "Stand back! I'm going to pull the lever!", "action": "solve_puzzle_broken_lift"}
+    ]
+  },
+  "lift_fixed": {
+    "conditions": {"puzzle_done": "broken_lift"},
+    "priority": 2,
+    "nodes": [
+      {"text": "The lift works! It definitely goes down. Probably. Let me test it...", "next": 1},
+      {"text": "*Squig rides the lift down* ... It works! Marsh is open!", "next": null}
+    ]
+  }
+}

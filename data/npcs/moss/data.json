@@ -1,0 +1,12 @@
+{
+  "id": "moss",
+  "name": "Old Miner Moss",
+  "room": "village_01",
+  "x": 80,
+  "y": 128,
+  "size": [24, 38],
+  "color": [140, 120, 100],
+  "sprite": null,
+  "interact_range": 26,
+  "face_right": true
+}

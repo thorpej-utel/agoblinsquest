@@ -1,0 +1,18 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "Are you really going to save the King?", "next": 1},
+      {"text": "Wow. I'm going to be an adventurer when I grow up too!", "next": 2},
+      {"text": "Oh! I saw something behind the blacksmith's barrels. A rope! Behind the big ones!", "next": null}
+    ]
+  },
+  "has_rope": {
+    "conditions": {"has_item": "rope"},
+    "priority": 1,
+    "nodes": [
+      {"text": "You got the rope! I knew it was there. I see everything in this village.", "next": null}
+    ]
+  }
+}

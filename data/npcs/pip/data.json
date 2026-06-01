@@ -1,0 +1,12 @@
+{
+  "id": "pip",
+  "name": "Pip",
+  "room": "village_01",
+  "x": 352,
+  "y": 128,
+  "size": [16, 24],
+  "color": [100, 180, 100],
+  "sprite": null,
+  "interact_range": 22,
+  "face_right": false
+}

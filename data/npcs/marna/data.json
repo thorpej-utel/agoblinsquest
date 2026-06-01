@@ -1,0 +1,12 @@
+{
+  "id": "marna",
+  "name": "Marna",
+  "room": "village_01",
+  "x": 160,
+  "y": 128,
+  "size": [22, 34],
+  "color": [130, 80, 120],
+  "sprite": null,
+  "interact_range": 26,
+  "face_right": true
+}

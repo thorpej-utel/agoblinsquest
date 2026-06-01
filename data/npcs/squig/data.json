@@ -1,0 +1,12 @@
+{
+  "id": "squig",
+  "name": "Professor Squig",
+  "room": "village_01",
+  "x": 224,
+  "y": 64,
+  "size": [24, 38],
+  "color": [180, 120, 40],
+  "sprite": null,
+  "interact_range": 26,
+  "face_right": true
+}

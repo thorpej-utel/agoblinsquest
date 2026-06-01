@@ -1,0 +1,31 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "Welcome, welcome! First customer of the day! Well... first customer this week.", "next": 1},
+      {"text": "Not much in stock right now, but if you find any Gold Teeth, I'll trade you fair and square.", "next": null}
+    ]
+  },
+  "has_gold_teeth": {
+    "conditions": {"has_item": "gold_tooth"},
+    "priority": 1,
+    "nodes": [
+      {"text": "A Gold Tooth! Shiny! I'll trade you for something useful.", "next": null, "remove_item": "gold_tooth", "give_item": "wooden_plank"}
+    ]
+  },
+  "after_plank": {
+    "conditions": {"has_item": "wooden_plank"},
+    "priority": 2,
+    "nodes": [
+      {"text": "Pleasure doing business! Come back when you find more teeth.", "next": null}
+    ]
+  },
+  "returned_hero": {
+    "conditions": {"puzzle_done": "final_boss"},
+    "priority": 10,
+    "nodes": [
+      {"text": "The hero returns! Anything in my shop is yours, free of charge. You've earned it.", "next": null}
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "intro": {
+    "conditions": {},
+    "priority": 0,
+    "nodes": [
+      {"text": "Grub. Good. You're awake.", "next": 1},
+      {"text": "The King has been missing for three moons. Three expeditions into Blackfang Mountain. None returned.", "next": 2},
+      {"text": "I need someone... but look at you. You clean floors. You sweep gutters.", "next": 3},
+      {"text": "Ah, forget it. I'm sending you to Shaman Zog. If anyone knows what to do with you, it's him.", "next": null}
+    ]
+  },
+  "idle": {
+    "conditions": {"has_met": "chief"},
+    "priority": 1,
+    "nodes": [
+      {"text": "Still here? The King won't rescue himself.", "next": null}
+    ]
+  },
+  "has_broom": {
+    "conditions": {"has_item": "broom"},
+    "priority": 2,
+    "nodes": [
+      {"text": "Why are you carrying a broom?! Put that down and see Shaman Zog.", "next": null}
+    ]
+  },
+  "after_zog": {
+    "conditions": {"has_met": "zog"},
+    "priority": 3,
+    "nodes": [
+      {"text": "Zog spoke to you? Good. The Mushroom Woods entrance is east of the village.", "next": 1},
+      {"text": "Find a way across the broken bridge. That's your first test.", "next": null}
+    ]
+  },
+  "has_rope": {
+    "conditions": {"has_item": "rope"},
+    "priority": 4,
+    "nodes": [
+      {"text": "Good, you found the rope. The bridge in Mushroom Woods needs it.", "next": null}
+    ]
+  },
+  "cleared_woods": {
+    "conditions": {"puzzle_done": "broken_bridge"},
+    "priority": 5,
+    "nodes": [
+      {"text": "You crossed the bridge? Hmph. Maybe you're not completely useless.", "next": 1},
+      {"text": "Watchtower is north through the woods. Professor Squig lives at the top. He might have something useful.", "next": null}
+    ]
+  },
+  "has_gear": {
+    "conditions": {"has_item": "gear"},
+    "priority": 6,
+    "nodes": [
+      {"text": "That gear looks important. Squig at the Watchtower is always tinkering with things.", "next": null}
+    ]
+  },
+  "cleared_watchtower": {
+    "conditions": {"puzzle_done": "broken_lift"},
+    "priority": 7,
+    "nodes": [
+      {"text": "The lift works? Then the marsh is open to you. Be careful near the witch's hut.", "next": null}
+    ]
+  },
+  "cleared_marsh": {
+    "conditions": {"puzzle_done": "dark_cave"},
+    "priority": 8,
+    "nodes": [
+      {"text": "You made it through the marsh. That's more than most could do.", "next": 1},
+      {"text": "Blackfang Mountain looms to the north. Old Miner Moss knows the entrance.", "next": null}
+    ]
+  },
+  "has_relics": {
+    "conditions": {"has_item": "gemstone", "has_item": "golden_acorn", "has_item": "ancient_coin"},
+    "priority": 9,
+    "nodes": [
+      {"text": "Three ancient relics... You might actually be the one after all.", "next": 1},
+      {"text": "Find the locked shrine in the mountain ruins. That's where the path to the King begins.", "next": null}
+    ]
+  },
+  "final": {
+    "conditions": {"puzzle_done": "locked_shrine"},
+    "priority": 10,
+    "nodes": [
+      {"text": "The path is open? Then go. Find our King.", "next": 1},
+      {"text": "And Grub? Come back alive. That's an order.", "next": null}
+    ]
+  },
+  "victory": {
+    "conditions": {"puzzle_done": "final_boss"},
+    "priority": 11,
+    "nodes": [
+      {"text": "You... you actually did it.", "next": 1},
+      {"text": "You found the King. You brought him home. You brought back the Crown.", "next": 2},
+      {"text": "I was wrong about you, Grub. We all were. Welcome home, hero.", "next": null, "action": "game_ending"}
+    ]
+  }
+}
